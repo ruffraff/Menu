@@ -1,0 +1,56 @@
+food_list_and_macronutrients: Lista de alimentos y macronutrientes
+selected_foods: Alimentos seleccionados
+food: Alimento
+type: Tipo
+water: Agua
+protein: Proteínas
+fat: Grasas
+carbohydrate: Hidratos de carbono
+fiber: Fibra
+macronutrients: Macronutrientes
+macronutrient: Macronutriente
+value_grams: Valor (g)
+chart: Gráfico
+filter_by_type: Filtrar por tipo:
+all: Todos
+cereals_and_derivatives: Cereales y derivados
+legumes: Legumbres
+vegetables: Verduras y hortalizas
+fruit: Frutas
+fresh_meats: Carnes frescas
+processed_meats: Carnes procesadas
+meat_based_fast_food: Comida rápida a base de carne
+offal: Despojos
+fish_products: Productos de la pesca
+milk_and_yogurt: Leche y yogur
+cheeses: Quesos
+eggs: Huevos
+oils_and_fats: Aceites y grasas
+sweets: Dulces
+various_products: Productos varios
+alcoholic_beverages: Bebidas alcohólicas
+search_food: Buscar alimento:
+search_food_placeholder: Buscar alimento...
+add: Añadir
+cancel: Cancelar
+food_categories:
+  cereals_and_derivatives: "Cereales y derivados"
+  legumes: "Legumbres"
+  vegetables: "Verduras y hortalizas"
+  fruits: "Frutas"
+  fresh_meats: "Carnes frescas"
+  processed_meats: "Carnes transformadas"
+  fast_foods_with_meat: "Comida rápida de carne"
+  offal: "Vísceras"
+  fish_products: "Productos de la pesca"
+  milk_and_yogurt: "Leche y yogur"
+  cheese: "Quesos"
+  eggs: "Huevos"
+  oils_and_fats: "Aceites y grasas"
+  sweets: "Dulces"
+  various_products: "Productos varios"
+  alcoholic_beverages: "Bebidas alcohólicas"
+insert_recipe: Insertar receta
+insert_food: Insertar alimento
+insert_menu: Insertar menú
+meal_list: Lista de comida

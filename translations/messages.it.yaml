@@ -1,0 +1,56 @@
+food_list_and_macronutrients: Lista Alimenti e Macro Nutrienti
+selected_foods: Alimenti selezionati
+food: Alimento
+type: Tipologia
+water: Acqua
+protein: Proteine
+fat: Lipidi
+carbohydrate: Carboidrati
+fiber: Fibra
+macronutrients: Macronutrienti
+macronutrient: Macronutriente
+value_grams: Valore (g)
+chart: Grafico
+filter_by_type: Filtrare per tipologia
+all: Tutti
+cereals_and_derivatives: Cereali e derivati
+legumes: Legumi
+vegetables: Verdure e ortaggi
+fruit: Frutta
+fresh_meats: Carni fresche
+processed_meats: Carni trasformate
+meat_based_fast_food: Fastfood a base di carne
+offal: Frattaglie
+fish_products: Prodotti della pesca
+milk_and_yogurt: Latte e yogurt
+cheeses: Formaggi
+eggs: Uova
+oils_and_fats: Oli e grassi
+sweets: Dolci
+various_products: Prodotti vari
+alcoholic_beverages: Bevande alcoliche
+search_food: Ricerca alimento
+search_food_placeholder: Cerca alimento...
+add: Aggiungi
+cancel: Annulla
+food_categories:
+  cereals_and_derivatives: "Cereali e derivati"
+  legumes: "Legumi"
+  vegetables: "Verdure e ortaggi"
+  fruits: "Frutta"
+  fresh_meats: "Carni fresche"
+  processed_meats: "Carni trasformate"
+  fast_foods_with_meat: "Fast food a base di carne"
+  offal: "Frattaglie"
+  fish_products: "Prodotti della pesca"
+  milk_and_yogurt: "Latte e yogurt"
+  cheese: "Formaggi"
+  eggs: "Uova"
+  oils_and_fats: "Oli e grassi"
+  sweets: "Dolci"
+  various_products: "Prodotti vari"
+  alcoholic_beverages: "Bevande alcoliche"
+insert_recipe: Inserisci ricetta
+insert_food: Inserisci alimento
+insert_menu: Inserisci menu
+meal_list: Elenco pasto

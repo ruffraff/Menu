@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RecipeController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+
+ 
+</style>
+<div class="container">
+<div class="col-9">
+        <h2>{{ 'selected_foods'|trans }}</h2>
+        <table id="mealTable">
+            <thead>
+                <tr>
+                    <th>{{ 'food'|trans }}</th>
+                    <th>{{ 'type'|trans }}</th>
+                    <th>{{ 'water'|trans }}</th>
+                    <th>{{ 'protein'|trans }}</th>
+                    <th>{{ 'fat'|trans }}</th>
+                    <th>{{ 'carbohydrate'|trans }}</th>
+                    <th>{{ 'fiber'|trans }}</th>
+                    <th>{{ 'slider'|trans }}</th>
+                    <th>{{ 'delete'|trans }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for food in selectedFoods %}
+                <tr>
+                    <td  dataFoodId="{{ food.id }}">{{ food.name }}</td>
+                    <td dataOriginalValue="{{ food.type }}">{{ food.type }}</td>
+                    <td dataOriginalValue="{{ food.water }}">{{ food.water }}</td>
+                    <td dataOriginalValue="{{ food.protein }}">{{ food.protein }}</td>
+                    <td dataOriginalValue="{{ food.fat }}">{{ food.fat }}</td>
+                    <td dataOriginalValue="{{ food.carbohydrate }}">{{ food.carbohydrate }}</td>
+                    <td dataOriginalValue="{{ food.fiber }}">{{ food.fiber }}</td>
+                    <td>
+                        <input type='range' min='1' max='200' value='100' class='slider' onchange="updateFoodPercentage(this.value, '{{ food.id }}')">
+                    </td>
+                    <td>
+                        <button onclick="deleteFood('{{ food.id }}')">{{ 'cancel'|trans }}</button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="col-3">
+        <h2>{{ 'macronutrients'|trans }}</h2>
+        <table id="macronutrientTable">
+            <thead>
+                <tr>
+                    <th>{{ 'macronutrient'|trans }}</th>
+                    <th>{{ 'value_grams'|trans }}</th>
+                    <th>{{ 'chart'|trans }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for macronutrient, value in macronutrients %}
+                <tr>
+                    <td>{{ macronutrient }}</td>
+                    <td>{{ value }}</td>
+                    <td>
+                        <div class="line-chart" style="width: {{ value * 5 }}px; background-color: #007BFF;"></div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
+ {% block javascripts %}
+            <script src="{{ asset('js/meal.js') }}"></script>
+        {% endblock %}

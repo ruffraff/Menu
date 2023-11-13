@@ -1,0 +1,56 @@
+food_list_and_macronutrients: Food List and Macronutrients
+selected_foods: Selected Foods
+food: Food
+type: Type
+water: Water
+protein: Protein
+fat: Fat
+carbohydrate: Carbohydrate
+fiber: Fiber
+macronutrients: Macronutrients
+macronutrient: Macronutrient
+value_grams: Value (g)
+chart: Chart
+filter_by_type: Filter by Type
+all: All
+cereals_and_derivatives: Cereals and Derivatives
+legumes: Legumes
+vegetables: Vegetables
+fruit: Fruit
+fresh_meats: Fresh Meats
+processed_meats: Processed Meats
+meat_based_fast_food: Meat-based Fast Food
+offal: Offal
+fish_products: Fish Products
+milk_and_yogurt: Milk and Yogurt
+cheeses: Cheeses
+eggs: Eggs
+oils_and_fats: Oils and Fats
+sweets: Sweets
+various_products: Various Products
+alcoholic_beverages: Alcoholic Beverages
+search_food: Search Food
+search_food_placeholder: Search for food...
+add: Add
+cancel: Cancel
+food_categories:
+  cereals_and_derivatives: "Cereals and derivatives"
+  legumes: "Legumes"
+  vegetables: "Vegetables"
+  fruits: "Fruits"
+  fresh_meats: "Fresh meats"
+  processed_meats: "Processed meats"
+  fast_foods_with_meat: "Fast foods with meat"
+  offal: "Offal"
+  fish_products: "Fish products"
+  milk_and_yogurt: "Milk and yogurt"
+  cheese: "Cheese"
+  eggs: "Eggs"
+  oils_and_fats: "Oils and fats"
+  sweets: "Sweets"
+  various_products: "Various products"
+  alcoholic_beverages: "Alcoholic beverages"
+insert_recipe: Insert recipe
+insert_food: Insert food
+insert_menu: Insert menu
+meal_list: Meal List

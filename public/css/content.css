@@ -1,0 +1,197 @@
+ /* Add CSS for the two-column layout and line charts */
+ .container {
+    display: flex;
+}
+
+    .col-9, .col-3 {
+    padding: 0 15px;
+    }
+    
+    .col-9 {
+    flex: 0 0 60%;
+    max-width: 60%;
+    }
+    
+    .col-3 {
+    flex: 0 0 20%;
+    max-width: 400px;
+    }
+.line-chart {
+display: inline-block;
+height: 15px;
+vertical-align: middle;
+background-image: linear-gradient(to right, #1abc9c 50%, #2ecc71 50%);
+background-size: 15px 15px;
+max-width: 400px; /* imposta la larghezza massima al 100% */
+}
+table {
+border-collapse: collapse;
+width: 100%;
+}
+ 
+
+th, td {
+border: 1px solid #ddd;
+text-align: left;
+height: 20px;
+padding: 8px;
+font-size: 16px; /* imposta la dimensione del testo a 14px */
+}
+
+tr:nth-child(even) {
+background-color: #f2f2f2;
+}
+
+tr:first-child {
+border-top: 2px solid #ddd;
+}
+
+tr:last-child {
+border-bottom: 2px solid #ddd;
+}
+
+td:first-child {
+border-left: 2px solid #ddd;
+}
+
+td:last-child {
+border-right: 2px solid #ddd;
+}
+
+.slider {
+-webkit-appearance: none;
+width: 100%;
+height: 8px;
+border-radius: 5px;
+background: linear-gradient(to right, #1abc9c, #2ecc71);
+outline: none;
+opacity: 0.7;
+-webkit-transition: .2s;
+transition: opacity .2s;
+}
+
+.slider:hover {
+opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+-webkit-appearance: none;
+appearance: none;
+width: 15px;
+height: 15px;
+border-radius: 50%;
+background: #007bff;
+cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+width: 15px;
+height: 15px;
+border-radius: 50%;
+background: #007bff;
+cursor: pointer;
+}
+.search-container {
+    text-align: center; /* centrare gli elementi all'interno del contenitore */
+    padding-bottom: 15px;
+}
+.button-container    {
+    text-align: center; /* centrare gli elementi all'interno del contenitore */
+}
+select#type, input#search {
+    display: inline-block;
+    vertical-align: middle;
+    width: 25%; /* imposta la larghezza al 45% /
+    margin-right: 10px; / aggiunge uno spazio tra la select e l'input */
+    padding: 8px;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+    
+    select#type:focus, input#search:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+    #type {
+        margin-right: 10px; /* aggiunge uno spazio tra la select e l'input */
+        }
+button {
+display: inline-block;
+padding: 8px 15px;
+font-size: 12px;
+font-weight: bold;
+text-align: center;
+text-decoration: none;
+white-space: nowrap;
+border: none;
+border-radius: 4px;
+background-color: #007bff;
+color: #fff;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+button:hover {
+background-color: #0062cc;
+color: #fff;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+background-color: #005cbf;
+box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+button:disabled {
+    background-color: #ccc;
+    color: #666;
+    box-shadow: none;
+    }
+input[type="button"]  {
+    display: inline-block;
+    height: 30px;
+    margin: 8px;
+
+    padding: 8px 15px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+input[type="button"]:hover {
+    background-color: #0062cc;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+input[type="button"]:active {
+    background-color: #005cbf;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+input[type="button"]:disabled {
+    background-color: #ccc;
+    color: #666;
+    box-shadow: none;
+    }
+
+.col-12 {
+        width: 100%;
+    }
+
+.mt-4 {
+        margin-top: 4rem;
+    }
+    

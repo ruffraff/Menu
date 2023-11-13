@@ -1,0 +1,144 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Food List and Macronutrients{% endblock %}
+
+{% block body %}
+
+<h1>{{ 'meal_list'|trans }}</h1>
+<div class="container">
+    <div class="col-9">
+        <h2>{{ 'selected_foods'|trans }}</h2>
+        <table id="mealTable">
+            <thead>
+                <tr>
+                    <th>{{ 'food'|trans }}</th>
+                    <th>{{ 'type'|trans }}</th>
+                    <th>{{ 'water'|trans }}</th>
+                    <th>{{ 'protein'|trans }}</th>
+                    <th>{{ 'fat'|trans }}</th>
+                    <th>{{ 'carbohydrate'|trans }}</th>
+                    <th>{{ 'fiber'|trans }}</th>
+                    <th>{{ 'slider'|trans }}</th>
+                    <th>{{ 'delete'|trans }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for food in selectedFoods %}
+                <tr>
+                    <td  dataFoodId="{{ food.id }}">{{ food.name }}</td>
+                    <td dataOriginalValue="{{ food.type }}">{{ food.type }}</td>
+                    <td dataOriginalValue="{{ food.water }}">{{ food.water }}</td>
+                    <td dataOriginalValue="{{ food.protein }}">{{ food.protein }}</td>
+                    <td dataOriginalValue="{{ food.fat }}">{{ food.fat }}</td>
+                    <td dataOriginalValue="{{ food.carbohydrate }}">{{ food.carbohydrate }}</td>
+                    <td dataOriginalValue="{{ food.fiber }}">{{ food.fiber }}</td>
+                    <td>
+                        <input type='range' min='1' max='200' value='100' class='slider' onchange="updateFoodPercentage(this.value, '{{ food.id }}')">
+                    </td>
+                    <td>
+                        <button onclick="deleteFood('{{ food.id }}')">{{ 'cancel'|trans }}</button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="col-3">
+        <h2>{{ 'macronutrients'|trans }}</h2>
+        <table id="macronutrientTable">
+            <thead>
+                <tr>
+                    <th>{{ 'macronutrient'|trans }}</th>
+                    <th>{{ 'value_grams'|trans }}</th>
+                    <th>{{ 'chart'|trans }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for macronutrient, value in macronutrients %}
+                <tr>
+                    <td>{{ macronutrient }}</td>
+                    <td>{{ value }}</td>
+                    <td>
+                        <div class="line-chart" style="width: {{ value * 5 }}px; background-color: #007BFF;"></div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="button-container">
+    <input type="button" value="{{ 'insert_recipe'|trans }}" onclick="window.location.href='{{ path('app_recipe') }}'">
+<input type="button" value="{{ 'insert_food'|trans }}" onclick="window.location.href='{{ path('app_food') }}'">
+<input type="button" value="{{ 'insert_menu'|trans }}" onclick="window.location.href='{{ path('app_menu') }}'">
+</div>
+
+<h1>{{ 'food_list_and_macronutrients'|trans }}</h1>
+<div class="search-container">
+    <label for="type">{{ 'filter_by_type'|trans }}
+   
+ 
+
+<select id="type" onchange="filterFoods()">
+    <option value="all">{{ 'all'|trans }}</option>
+    <option value="1">{{ 'cereals_and_derivatives'|trans }}</option>
+    <option value="2">{{ 'legumes'|trans }}</option>
+    <option value="3">{{ 'vegetables'|trans }}</option>
+    <option value="4">{{ 'fruit'|trans }}</option>
+    <option value="5">{{ 'fresh_meats'|trans }}</option>
+    <option value="6">{{ 'processed_meats'|trans }}</option>
+    <option value="7">{{ 'meat_based_fast_food'|trans }}</option>
+    <option value="8">{{ 'offal'|trans }}</option>
+    <option value="9">{{ 'fish_products'|trans }}</option>
+    <option value="10">{{ 'milk_and_yogurt'|trans }}</option>
+    <option value="11">{{ 'cheeses'|trans }}</option>
+    <option value="12">{{ 'eggs'|trans }}</option>
+    <option value="13">{{ 'oils_and_fats'|trans }}</option>
+    <option value="14">{{ 'sweets'|trans }}</option>
+    <option value="15">{{ 'various_products'|trans }}</option>
+    <option value="16">{{ 'alcoholic_beverages'|trans }}</option>
+</select>
+<label for="search">{{ 'search_food'|trans }}:</label>
+<input type="text" id="search" placeholder="{{ 'search_food_placeholder'|trans }}" onkeyup="filterFoods()">
+
+
+    
+    {# <input type="text" id="search" placeholder="{{ 'search_food_placeholder'|trans }}"  onkeyup="filterFoods()"  value="{{ app.request.get('search') }}"> #}
+</div>
+<table id="foodTable">
+    <thead>
+        <tr>
+            <th>{{ 'food'|trans }}</th>
+            <th>{{ 'type'|trans }}</th>
+            <th>{{ 'water'|trans }}</th>
+            <th>{{ 'protein'|trans }}</th>
+            <th>{{ 'fat'|trans }}</th>
+            <th>{{ 'carbohydrate'|trans }}</th>
+            <th>{{ 'fiber'|trans }}</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for food in foodList %}
+        <tr style="" data-food-id="{{ food.id }}" data-food-added="false">
+  <td datafoodid="{{ food.id }}">{{ food.getFoodName() }}</td>
+  <td data-food-type="{{ food.getFoodType().getFoodTypeName() }}">{{ food.getFoodType().getFoodTypeName() }}</td>
+  <td dataoriginalvalue="water">{{ food.getMacroElement().getWater() }}</td>
+  <td dataoriginalvalue="protein">{{ food.getMacroElement().getProtein() }}</td>
+  <td dataoriginalvalue="fat">{{ food.getMacroElement().getLipids() }}</td>
+  <td dataoriginalvalue="carbohydrate">{{ food.getMacroElement().getCarbohydrates() }}</td>
+  <td dataoriginalvalue="fiber">{{ food.getMacroElement().getFiber() }}</td>
+  <td>
+    <button onclick="addFood({{ food.id }})">{{ 'add'|trans }}</button>
+  </td>
+</tr>
+        {% endfor %}
+    </tbody>
+ </table> 
+
+
+{% endblock %}
+
+ {% block javascripts %}
+            <script src="{{ asset('js/meal.js') }}"></script>
+        {% endblock %}
